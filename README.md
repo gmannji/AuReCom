@@ -10,7 +10,7 @@ Initially, the idea came after i learned using openpyxl and straight started thi
 
 The script will initially request for an excel file downloaded from our Risk Management System in a specific format as first input. Then it'll start to flag the risk register for errors and cells or items that require attention (risks triggering soon, risks expired and expiring soon, mitigation actions due and overdue, etc). It'll then write a status update in a new cell next to the end column of first row of the current risk register by giving the number of risks, risk status, and actions status. 
 
-save create new file append comments
+New excel file created and saved.
 
 Then it'll request for another excel file for comparison, this is usually previous month's risk register that i am reviewing. The reason for comparing to last month's risk register is that i can track what have the projects accomplished in their risk management activities. Changes will be captured in a new sheet and distinguished with "old --<<>>-- new" format. At the same time changes that i care about (i.e changes to mitigation actions) are interpreted and added to a new column in this new sheet.
 
@@ -18,6 +18,6 @@ During this stage, the script will also identify which risks are new and which a
 
 Finally, all of the changes that i care about will be shown in the same cell as the status update.
 
-save create new file append comments
+Then saved on the new excel file created.
 
-convert to exe so team mate can use
+Additionally the script is converted to .exe so my other teammates can make a good use out of it.
