@@ -96,4 +96,6 @@
 #  4.5.4 action ID selected based on new item instead of old. (a vs b, c vs d)
 #  4.5.4 modify coding for action status changes to include empty action (' - ')
 #  4.6 set new condition for counting treatment actions for Open - Active risks only
+#  4.7 github release
+#  4.8 start highlighting new risks added in the comments tab
 

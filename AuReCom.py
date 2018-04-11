@@ -600,6 +600,9 @@ new_risk_set['duplicate']=new_risk_set["ID"].isin(dupe_riskID)
 # Identify added risks
 added_risks = new_risk_set[(new_risk_set["duplicate"] == False) & (new_risk_set["version"] == "new")]
 
+# New risks into set so that we can highlight risk ID cells for new risks
+added_risks_set = set(added_risks['ID'])
+
 # Re-Index added risks
 added_risks.set_index('ID',inplace=True)
 
@@ -898,6 +901,12 @@ cell_final = sheet.cell(row=firstrow_excel, column=sheet.max_column)
 # update final count
 FINAL_SUMMARY = FINAL_SUMMARY + '\n\nChanges from previous risk review:\n' + total_now_added_closed + total_rating + total_final
 cell_final.value = FINAL_SUMMARY
+
+# new risk cell highlight
+for rows in range(firstrow_excel, sheet.max_row + 1):
+    cell = sheet.cell(row=rows, column=COLUMN_NO['ID'])
+    if int(cell.value) in added_risks_set:
+      cell.fill = greenFill
 
 writer.save()
 
